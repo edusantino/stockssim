@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="5dp"
+    android:background="#66858181">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cardLayoutLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/background_comp">
+
+        <ImageView
+            android:id="@+id/compLogoImageView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/c14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/compTitleNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            tools:text="Burger King"
+            android:fontFamily="@font/poppins_semibold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/compLogoImageView" />
+
+        <TextView
+            android:id="@+id/compCodeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="BBK"
+            android:textColor="#838384"
+            android:textSize="10sp"
+            android:fontFamily="@font/poppins_semibold"
+            app:layout_constraintTop_toBottomOf="@id/compTitleNameTextView"
+            app:layout_constraintStart_toStartOf="@id/compTitleNameTextView" />
+
+        <TextView
+            android:id="@+id/compValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            tools:text="R$ 1 356,00"
+            android:textColor="#757474"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/compCodeTextView"
+            app:layout_constraintStart_toStartOf="@id/compTitleNameTextView" />
+
+        <TextView
+            android:id="@+id/compPercentGrowth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/background_green"
+            android:fontFamily="@font/poppins_semibold"
+            tools:text="+2,34%"
+            android:textColor="#05F80F"
+            android:textSize="12sp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toTopOf="@id/compValue"
+            app:layout_constraintBottom_toBottomOf="@id/compValue"
+            app:layout_constraintStart_toEndOf="@id/compValue"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

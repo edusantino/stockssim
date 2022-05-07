@@ -1,6 +1,230 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/homeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.robinhood.ticker.TickerView
+            android:id="@+id/totalWorthTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            tools:text="R$ 1 233,22"
+            android:textColor="#22BFA2"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:ticker_animationDuration="1500"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/totalWorthLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/poppins_medium"
+            android:text="TOTAL WORTH"
+            android:textSize="10dp"
+            app:layout_constraintEnd_toEndOf="@id/totalWorthTextView"
+            app:layout_constraintStart_toStartOf="@id/totalWorthTextView"
+            app:layout_constraintTop_toBottomOf="@id/totalWorthTextView" />
+
+        <View
+            android:id="@+id/viewSeparator"
+            android:layout_width="1dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="20dp"
+            android:background="#ABABAC"
+            app:layout_constraintTop_toBottomOf="@id/totalWorthLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/valueBestTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_bold"
+            tools:text="245.00"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/viewSeparator"
+            app:layout_constraintTop_toTopOf="@id/viewSeparator" />
+
+        <TextView
+            android:id="@+id/percentBest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="3.34%"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="18sp"
+            android:textColor="#2F7C21"
+            app:layout_constraintTop_toTopOf="@id/upIcon"
+            app:layout_constraintBottom_toBottomOf="@id/upIcon"
+            app:layout_constraintStart_toEndOf="@id/upIcon" />
+
+        <ImageView
+            android:id="@+id/upIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/valueBestTextView"
+            android:src="@drawable/ic_arrow_up_mini"/>
+
+        <TextView
+            android:id="@+id/idBestTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/poppins_medium"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="5dp"
+            tools:text="FGB"
+            android:textColor="#311B92"
+            app:layout_constraintTop_toBottomOf="@id/valueBestTextView"
+            app:layout_constraintEnd_toStartOf="@id/viewSeparator" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:text="MAX"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/viewSeparator"
+            app:layout_constraintTop_toBottomOf="@id/upIcon" />
+
+
+        <TextView
+            android:id="@+id/valueLowestTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_bold"
+            tools:text="245.00"
+            android:textSize="30sp"
+            app:layout_constraintTop_toTopOf="@id/viewSeparator"
+            app:layout_constraintStart_toEndOf="@id/viewSeparator"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/percentLowest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_medium"
+            tools:text="3.34%"
+            android:textColor="#B71C1C"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="@id/downIcon"
+            app:layout_constraintBottom_toBottomOf="@id/downIcon"
+            app:layout_constraintStart_toEndOf="@id/downIcon"/>
+
+        <ImageView
+            android:id="@+id/downIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_arrow_down_mini"
+            app:layout_constraintStart_toEndOf="@id/viewSeparator"
+            app:layout_constraintTop_toBottomOf="@id/valueLowestTextView"/>
+
+        <TextView
+            android:id="@+id/idLowestTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="FGB"
+            android:textColor="#311B92"
+            app:layout_constraintTop_toBottomOf="@id/valueLowestTextView"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="MIN"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/downIcon"
+            app:layout_constraintStart_toStartOf="@id/viewSeparator"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <View
+            android:id="@+id/viewSeparatorTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            app:layout_constraintTop_toBottomOf="@id/viewSeparator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/stocksNowLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="STOCKS NOW"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewSeparatorTwo" />
+
+        <ImageView
+            android:id="@+id/btnSortUp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/arrowup"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/stocksNowRecyclerView" />
+
+        <ImageView
+            android:id="@+id/btnSortDown"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/arrowdown"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toStartOf="@id/btnSortUp"
+            app:layout_constraintBottom_toTopOf="@id/stocksNowRecyclerView"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/stocksNowRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:itemCount="3"
+            tools:listitem="@layout/item_companies"
+            app:layout_constraintTop_toBottomOf="@id/stocksNowLabel" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent "/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

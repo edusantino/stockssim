@@ -1,16 +1,16 @@
 [
   {
     "companyId": "BBK",
-    "name": "Burguer King",
+    "name": "Burger King",
     "description": "NO DATA",
     "initValue": 4.5,
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/Apple_orchard_in_Tasmania.jpg"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Burger_King_1994_logo.png"
   },
   {
     "companyId": "APPL",
     "name": "Apple",
     "description": "NO DATA",
     "initValue": 23.5,
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/55/Apple_orchard_in_Tasmania.jpg"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Apple-logo.png"
   }
 ]
